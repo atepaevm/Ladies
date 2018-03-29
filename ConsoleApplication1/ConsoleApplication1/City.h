@@ -5,9 +5,9 @@
 using namespace std;
 class City
 {
-private:
+public:
 	string name;
 	float latitude, longitude;
 public:
-	void setCity(string nameC, float latitudeC, float longitudeC);
+	void setCity(string nameC, float latitudeC, float longitudeC); //создает объект класса
 };

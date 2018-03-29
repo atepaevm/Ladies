@@ -3,6 +3,7 @@
 #include <fstream>
 #include<string.h>
 #include "City.h"
+#include "Distance.h"
 #include <stdlib.h>
 #include <string>
 using namespace std;
@@ -42,6 +43,11 @@ int main()
 		cityVec.push_back(cit);
 	}
 	fin.close(); // закрываем файл
+
+	Distance distance;
+	distance.buildMatrix(cityVec);
+	distance.showMatrix();
+
 	system("pause");
 	return 0;
 

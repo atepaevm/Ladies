@@ -12,3 +12,4 @@ void City::setCity(string nameC, float latitudeC, float longitudeC)
 	latitude = latitudeC;
 	longitude = longitudeC;
 }
+

@@ -1,1 +1,7 @@
-﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets(57,5): error MSB8020: The build tools for v141 (Platform Toolset = 'v141') cannot be found. To build using the v141 build tools, please install v141 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Retarget solution".
+﻿  ConsoleApplication1.cpp
+c:\git\ladies\consoleapplication1\consoleapplication1\consoleapplication1.cpp(28): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note:  см. объявление "strtok"
+c:\git\ladies\consoleapplication1\consoleapplication1\consoleapplication1.cpp(40): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note:  см. объявление "strtok"
+  ConsoleApplication1.vcxproj -> C:\Git\Ladies\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
+  ConsoleApplication1.vcxproj -> C:\Git\Ladies\ConsoleApplication1\x64\Debug\ConsoleApplication1.pdb (Partial PDB)

@@ -7,7 +7,7 @@ class City
 {
 public:
 	string name;
-	float latitude, longitude;
+	double latitude, longitude;
 public:
-	void setCity(string nameC, float latitudeC, float longitudeC); //создает объект класса
+	void setCity(string nameC, double latitudeC, double longitudeC); //создает объект класса
 };

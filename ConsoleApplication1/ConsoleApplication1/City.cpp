@@ -6,7 +6,7 @@
 using namespace std;
 
 
-void City::setCity(string nameC, float latitudeC, float longitudeC)
+void City::setCity(string nameC, double latitudeC, double longitudeC)
 {
 	name = nameC;
 	latitude = latitudeC;

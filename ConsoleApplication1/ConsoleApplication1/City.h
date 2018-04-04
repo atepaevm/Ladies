@@ -10,4 +10,5 @@ public:
 	double latitude, longitude;
 public:
 	void setCity(string nameC, double latitudeC, double longitudeC); //создает объект класса
+
 };

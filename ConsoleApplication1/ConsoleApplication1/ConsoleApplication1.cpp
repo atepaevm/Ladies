@@ -20,7 +20,7 @@ int main()
 	double latitude = 0, longitude = 0;
 	int j = 0;
 //	while (!fin.eof())
-	while (j < 10)
+	while (j < 5)
 	{
 		++j;
 		City cit;

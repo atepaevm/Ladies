@@ -4,14 +4,33 @@
 #include "City.h"
 
 
-void Distance::buildMatrix(vector <City> cityVec)
+Distance::Distance()
 {
-	for (vector<City>::iterator itA = cityVec.begin(); itA != cityVec.end(); itA++) {
+	
+
+	for (int i = 0; i < 5; i++)
+	{
 		vector<double> row;
-		for (vector<City>::iterator itB = cityVec.begin(); itB != cityVec.end(); itB++) {
-			row.push_back(calculateDistance((*itA).latitude, (*itA).longitude, (*itB).latitude, (*itB).longitude));
+		for (int j = 0; j < 5; j++)
+		{
+			row.push_back(0);
 		}
 		distanceVec.push_back(row);
+	}
+
+
+};
+void Distance::buildMatrix(vector <City> cityVec)
+{
+	int i = 0;int j=0;
+
+	for (vector<City>::iterator itA = cityVec.begin(); itA != cityVec.end(); itA++) {
+		for (vector<City>::iterator itB = cityVec.begin(); itB != cityVec.end(); itB++) {
+			distanceVec[i][j]=calculateDistance((*itA).latitude, (*itA).longitude, (*itB).latitude, (*itB).longitude);
+			++j;
+		}
+		++i;
+		j = 0;
 	}
 
 

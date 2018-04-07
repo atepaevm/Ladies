@@ -1,3 +1,9 @@
 ﻿  Distance.cpp
-  ConsoleApplication1.vcxproj -> C:\Мика\Учеба\5 семестр\Мишка\Git\ConsoleApplication1\Debug\ConsoleApplication1.exe
-  ConsoleApplication1.vcxproj -> C:\Мика\Учеба\5 семестр\Мишка\Git\ConsoleApplication1\Debug\ConsoleApplication1.pdb (Partial PDB)
+  ConsoleApplication1.cpp
+c:\мика\учеба\5 семестр\мишка\ladies-evs56\consoleapplication1\consoleapplication1\consoleapplication1.cpp(46): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(439): note:  см. объявление "strtok"
+c:\мика\учеба\5 семестр\мишка\ladies-evs56\consoleapplication1\consoleapplication1\consoleapplication1.cpp(54): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(439): note:  см. объявление "strtok"
+  Создание кода...
+  ConsoleApplication1.vcxproj -> C:\Мика\Учеба\5 семестр\Мишка\Ladies-evs56\ConsoleApplication1\Debug\ConsoleApplication1.exe
+  ConsoleApplication1.vcxproj -> C:\Мика\Учеба\5 семестр\Мишка\Ladies-evs56\ConsoleApplication1\Debug\ConsoleApplication1.pdb (Partial PDB)

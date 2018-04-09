@@ -3,36 +3,59 @@
 #include <fstream>
 #include<string.h>
 #include "City.h"
-#include "Distance.h"
+#include "DistanceMatrix.h"
 #include <stdlib.h>
 #include <string>
+#include <iomanip>
 using namespace std;
+
+
+
+string getNearest(double lat, double lon,std::vector<City>& cityVec)
+{
+	double distance;
+	double nearest = 100000;
+	string city;
+	for each (City c in cityVec)
+	{
+		distance = sqrt(pow(lat - c.latitude, 2) + pow(lon - c.longitude, 2));
+		if (distance < nearest) {
+			nearest = distance;
+			city = c.name;
+		}
+	}
+	return city;
+}
 
 int main()
 {
+	
 	vector <City> cityVec;
-	//setlocale(LC_ALL, "rus"); // корректное отображение Кириллицы
-	char buff[100]; // буфер промежуточного хранения считываемого из файла текста
-	ifstream fin("C:\\Users\\Евгения\\Downloads\\city_data.csv"); // открыли файл для чтения
-	fin.getline(buff, 100); //первая строка нас не интересует
-	int i = 0; //счечик
+	int const bufSize = 255;
+	int const countOfCities = 49;
+	char buff[bufSize]; // буфер промежуточного хранения считываемого из файла текста
+	ifstream fin("..\\data\\data.csv"); // открыли файл для чтения
+	fin.getline(buff, bufSize); //первая строка нас не интересует
+	int i = 0; //счетчик
 	string name = "";
 	double latitude = 0, longitude = 0;
-	int j = 0;
 //	while (!fin.eof())
-	while (j < 5)
-	{
-		++j;
-		City cit;
-		fin.getline(buff, 100); // считали строку из файла
+//while (countOfCities < 5)
+	for(int j=0;j<countOfCities && !fin.eof();++j){
+		//++countOfCities;
+		//City cit;
+		fin.getline(buff, bufSize); // считали строку из файла
 		char * pch = strtok(buff, ","); // замутили разделители
 		i = 0;
 		while (pch != NULL)                         // пока есть лексемы
 		{
-			
-			char* s = "34.32";
-			double f = atof(s);
-
+			/*
+			switch(i)
+				case 0:
+					name = pch;
+					break;
+				default:
+			*/
 			if (i == 0) name = pch;
 			if (i == 2) latitude = atof(pch);
 			if (i == 3) longitude = atof(pch);
@@ -41,16 +64,26 @@ int main()
 			++i;
 		}
 
-		cit.setCity(name, latitude, longitude);
-		cityVec.push_back(cit);
+		cityVec.push_back(City(name,latitude,longitude));
 	}
 	fin.close(); // закрываем файл
 
-	Distance distance;
-	distance.buildMatrix(cityVec);
+	DistanceMatrix distance(cityVec);
 	distance.showMatrix();
+	
+	double lat = 55.33996;
+	double lon = 86.08998;
+	cout << "---------------------------------------------------------------------------" << endl << endl;
+	cout << "The nearest city to " << std::setprecision(5)<<lat << ", " << lon << " is " << getNearest(lat, lon,cityVec)<< endl;
+
+	cout << "---------------------------------------------------------------------------" << endl << endl;
+	cout << "mean = " << distance.getMean() << endl;
+
+	cout << "---------------------------------------------------------------------------" << endl << endl;
+	cout << "dispersion = " << distance.getDispersion() << endl;
 
 	system("pause");
 	return 0;
 
 }
+

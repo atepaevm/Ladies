@@ -1,3 +1,5 @@
-﻿  Distance.cpp
+﻿  DistanceMatrix.cpp
+c:\git\ladies\consoleapplication1\consoleapplication1\distancematrix.cpp(10): warning C4267: инициализация: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+c:\git\ladies\consoleapplication1\consoleapplication1\distancematrix.cpp(11): warning C4018: <: несоответствие типов со знаком и без знака
   ConsoleApplication1.vcxproj -> C:\Git\Ladies\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
   ConsoleApplication1.vcxproj -> C:\Git\Ladies\ConsoleApplication1\x64\Debug\ConsoleApplication1.pdb (Partial PDB)

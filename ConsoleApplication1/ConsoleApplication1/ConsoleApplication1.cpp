@@ -3,7 +3,7 @@
 #include <fstream>
 #include<string.h>
 #include "City.h"
-#include "Distance.h"
+#include "DistanceMatrix.h"
 #include <stdlib.h>
 #include <string>
 #include <iomanip>
@@ -32,14 +32,13 @@ int main()
 	
 	vector <City> cityVec;
 	int const bufSize = 255;
-	int const countOfCities = 1000;
+	int const countOfCities = 49;
 	char buff[bufSize]; // буфер промежуточного хранения считываемого из файла текста
 	ifstream fin("..\\data\\data.csv"); // открыли файл для чтения
 	fin.getline(buff, bufSize); //первая строка нас не интересует
 	int i = 0; //счетчик
 	string name = "";
 	double latitude = 0, longitude = 0;
-	//int countOfCities = 0;
 //	while (!fin.eof())
 //while (countOfCities < 5)
 	for(int j=0;j<countOfCities && !fin.eof();++j){
@@ -65,14 +64,12 @@ int main()
 			++i;
 		}
 
-		//cit.setCity(name, latitude, longitude);
 		cityVec.push_back(City(name,latitude,longitude));
 	}
 	fin.close(); // закрываем файл
 
-	Distance distance(cityVec);
-	//distance.buildMatrix(cityVec);
-	//distance.showMatrix();
+	DistanceMatrix distance(cityVec);
+	distance.showMatrix();
 	
 	double lat = 55.33996;
 	double lon = 86.08998;

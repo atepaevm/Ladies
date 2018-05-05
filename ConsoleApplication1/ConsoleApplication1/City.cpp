@@ -5,11 +5,4 @@
 
 using namespace std;
 
-/*
-void City::setCity(string nameC, double latitudeC, double longitudeC)
-{
-	name = nameC;
-	latitude = latitudeC;
-	longitude = longitudeC;
-}
-*/
+

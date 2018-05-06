@@ -9,9 +9,7 @@
 #include <iomanip>
 using namespace std;
 
-
-
-string getNearest(double lat, double lon,std::vector<City>& cityVec)
+string getNearest(double lat, double lon, std::vector<City>& cityVec)
 {
 	double distance;
 	double nearest = 100000;
@@ -29,7 +27,6 @@ string getNearest(double lat, double lon,std::vector<City>& cityVec)
 
 int main()
 {
-	
 	vector <City> cityVec;
 	int const bufSize = 255;
 	int const countOfCities = 49;
@@ -39,42 +36,42 @@ int main()
 	int i = 0; //счетчик
 	string name = "";
 	double latitude = 0, longitude = 0;
-//	while (!fin.eof())
-//while (countOfCities < 5)
-	for(int j=0;j<countOfCities && !fin.eof();++j){
-		//++countOfCities;
-		//City cit;
+	for (int j = 0; j<countOfCities && !fin.eof(); ++j)
+	{
 		fin.getline(buff, bufSize); // считали строку из файла
 		char * pch = strtok(buff, ","); // замутили разделители
 		i = 0;
 		while (pch != NULL)                         // пока есть лексемы
 		{
-			/*
-			switch(i)
-				case 0:
-					name = pch;
-					break;
-				default:
-			*/
-			if (i == 0) name = pch;
-			if (i == 2) latitude = atof(pch);
-			if (i == 3) longitude = atof(pch);
-			if (i > 3) break;
+			switch (i)
+			{
+			case 0:
+				name = pch;
+				break;
+			case 2:
+				latitude = atof(pch);
+				break;
+			case 3:
+				longitude = atof(pch);
+				break;
+			default:
+				break;
+			}
+
 			pch = strtok(NULL, ",");
 			++i;
 		}
 
-		cityVec.push_back(City(name,latitude,longitude));
+		cityVec.push_back(City(name, latitude, longitude));
 	}
 	fin.close(); // закрываем файл
 
 	DistanceMatrix distance(cityVec);
 	distance.showMatrix();
-	
 	double lat = 55.33996;
 	double lon = 86.08998;
 	cout << "---------------------------------------------------------------------------" << endl << endl;
-	cout << "The nearest city to " << std::setprecision(5)<<lat << ", " << lon << " is " << getNearest(lat, lon,cityVec)<< endl;
+	cout << "The nearest city to " << std::setprecision(5) << lat << ", " << lon << " is " << getNearest(lat, lon, cityVec) << endl;
 
 	cout << "---------------------------------------------------------------------------" << endl << endl;
 	cout << "mean = " << distance.getMean() << endl;

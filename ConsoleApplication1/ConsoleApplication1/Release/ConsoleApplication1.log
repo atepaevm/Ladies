@@ -1,11 +1,1 @@
-﻿  ConsoleApplication1.cpp
-c:\users\matepaev\desktop\git\ladies\consoleapplication1\consoleapplication1\consoleapplication1.cpp(49): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(439): note:  см. объявление "strtok"
-c:\users\matepaev\desktop\git\ladies\consoleapplication1\consoleapplication1\consoleapplication1.cpp(64): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(439): note:  см. объявление "strtok"
-  Создание кода
-  1 of 365 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Создание кода завершено
-  ConsoleApplication1.vcxproj -> C:\Users\matepaev\Desktop\git\Ladies\ConsoleApplication1\Release\ConsoleApplication1.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Platforms\Win32\PlatformToolsets\v141\Toolset.targets(34,5): error MSB8036: не удалось найти Windows SDK версии 8.1. Установите нужную версию Windows SDK или измените версию SDK на страницах свойств проекта либо щелкнув правой кнопкой мыши решение и выбрав "Изменить целевую платформу решения".
